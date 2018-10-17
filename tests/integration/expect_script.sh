@@ -2,7 +2,7 @@
 
 spawn ./install.sh
 expect -exact "Input an existing directory path:\r"
-send -- "/home/noisy/Devel/EOS/eos\r"
+send -- "/opt/eos\r"
 expect -exact "Input an existing directory path:\r"
-send -- "/home/noisy/Devel/EOS/workspace\r"
+send -- "/opt/workspace\r"
 expect eof
