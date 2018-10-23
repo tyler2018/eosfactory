@@ -1,1 +1,3 @@
-include README.rst
+include contracts/*
+include localnode/*
+include README.md

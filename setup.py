@@ -24,6 +24,11 @@ setup(name='eosfactory',
     author_email='contact@tokenika.io',
     license='MIT',
     packages=find_packages(),
+    # include_package_data=True,
+    data_files=[
+        ('ln', ['localnode/config.ini', 'localnode/genesis.json']),
+        ('/opt/ef', ['resources/tokenika.gif']),
+    ],
     install_requires=[
         'termcolor',
     ],
