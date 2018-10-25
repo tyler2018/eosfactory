@@ -1,8 +1,8 @@
 build
 
-!/contracts/01_hello_world/build
-!/contracts/02_eosio_token/build
-!/contracts/03_tic_tac_toe/build
+!eosfactory/contracts/01_hello_world/build
+!eosfactory/contracts/02_eosio_token/build
+!eosfactory/contracts/03_tic_tac_toe/build
 
 Makefile
 CMakeFiles
