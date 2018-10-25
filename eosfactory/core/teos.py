@@ -383,6 +383,10 @@ def template_create(
                 project_dir, path.replace(
                                         TEMPLATE_NAME, project_name))
             if os.path.isdir(template_path):
+
+                if template_path.endswith("__pycache__"):
+                    return  # don't copy content of cache directory
+
                 os.mkdir(contract_path)
                 copy_dir_contents(
                             project_dir, template_dir, path, project_name)
