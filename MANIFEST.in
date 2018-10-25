@@ -1,3 +1,4 @@
 include contracts/*
-include localnode/*
+include eosfactory/localnode/config.ini
+include eosfactory/localnode/genesis.json
 include README.md
