@@ -210,21 +210,28 @@ def config_file():
 
 
 def config_map():
-    path = config_file()
-    if os.path.exists(path):
-        try:
-            with open(path, "r") as input:
-                text = input.read()
-                if not text:
-                    return {}
-                else:
-                    return json.loads(text)
-        except Exception as e:
-            raise errors.Error(str(e))
+    if config_map.map is None:
+        path = config_file()
+        if os.path.exists(path):
+            try:
+                with open(path, "r") as input:
+                    config_map.map = json.loads(input.read())
 
-    raise errors.Error('''
-Cannot find the config json file.       
-    ''')
+            except Exception as e:
+                raise errors.Error(str(e))
+
+    return dict(config_map.map or {})  # make a copy
+
+
+config_map.map = None
+
+
+def set_config(**kwargs):
+    config_map.map = dict(kwargs)
+
+
+def update_config(**kwargs):
+    config_map.map.update(kwargs)
 
 
 def write_config_map(map):
