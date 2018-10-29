@@ -30,6 +30,9 @@ tests/eosjsecc.js
 localnode/state
 localnode/blocks
 
+.coverage
+.coverage.*
+
 # Compiled python modules.
 *.pyc
 
