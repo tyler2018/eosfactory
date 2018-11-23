@@ -69,8 +69,8 @@ def ABI(
         for file in srcs:
             if not os.path.splitext(file)[1].lower() in extensions:
                 continue
-            command_line.append(file)
-        
+            command_line.extend(["-contract=" + os.path.splitext(
+                                            os.path.basename(file))[0], file])
         try:
             process(command_line)
         except Exception as e:
