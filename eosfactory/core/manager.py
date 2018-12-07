@@ -126,7 +126,7 @@ def reset(nodeos_log=None, verbosity=None):
     teos.node_start(clear=True, nodeos_log=nodeos_log, verbosity=verbosity)
 
 
-def resume(nodeos_log=None, verbosity=None):
+def resume(nodeos_stdout=None, verbosity=None):
     ''' Resume the EOSIO local node.
     ''' 
     if not cleos.set_local_nodeos_address_if_none():   
@@ -134,7 +134,7 @@ def resume(nodeos_log=None, verbosity=None):
             Not local nodeos is set: {}
         '''.format(setup.nodeos_address()), verbosity)
 
-    teos.node_start(nodeos_log=nodeos_log, verbosity=verbosity)
+    teos.node_start(nodeos_stdout=nodeos_stdout, verbosity=verbosity)
 
 
 def stop(verbosity=None):
