@@ -71,8 +71,6 @@ TASKS = '''
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": [
-            ]
         },
         {
             "label": "Test",
